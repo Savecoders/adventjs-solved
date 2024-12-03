@@ -20,18 +20,18 @@ learn(5, [5, 5, 5]) // null -> no nos da tiempo a hacer dos cursos
 */
 
 const learn = (time, courses) => {
-	let cont = 0;
-	let cordinates = null;
-	for (let index = 0; index < courses.length; index++) {
-		for (let index2 = 0; index2 < courses.length; index2++) {
-			const sum = courses[index] + courses[index2];
-			if (sum <= time && sum > cont && index !== index2) {
-				cordinates = [index, index2];
-				cont = sum;
-			}
-		}
-	}
-	return cordinates;
+  let cont = 0;
+  let cordinates = null;
+  for (let index = 0; index < courses.length; index++) {
+    for (let index2 = 0; index2 < courses.length; index2++) {
+      const sum = courses[index] + courses[index2];
+      if (sum <= time && sum > cont && index !== index2) {
+        cordinates = [index, index2];
+        cont = sum;
+      }
+    }
+  }
+  return cordinates;
 };
 
 console.log(learn(8, [8, 2, 1, 4, 3]));

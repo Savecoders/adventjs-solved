@@ -19,14 +19,15 @@ no se tiene que contar.
 * console.log(regalos)
 * {bici: 2,coche: 2,balón: 1,peluche: 1}
 */
-const listGifts = (letter) => {
-	const ArrLetters = letter.trim().split(' ');
-	const ArrFilterGifts = ArrLetters.filter((letter) => !letter.includes('_'));
-	const objGifts = {};
-	ArrFilterGifts.forEach((gift) => {
-		objGifts[gift] = !objGifts[gift] ? 1 : objGifts[gift] + 1;
-	});
-	return objGifts;
+
+const listGifts = letter => {
+  const ArrLetters = letter.trim().split(' ');
+  const ArrFilterGifts = ArrLetters.filter(letter => !letter.includes('_'));
+  const objGifts = {};
+  ArrFilterGifts.forEach(gift => {
+    objGifts[gift] = !objGifts[gift] ? 1 : objGifts[gift] + 1;
+  });
+  return objGifts;
 };
 const regalos = listGifts('bici coche balón _playstation bici coche peluche');
 console.log(regalos);

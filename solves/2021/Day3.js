@@ -23,20 +23,20 @@
   ?Crea una función que pasándole el texto de la carta, devuelva true si es 
   ?válida y false si no lo es. ¡Y acaba con la travesura del Grinch!
 */
-const isValid = (letter) => {
-	const Symbols = ['(', ')', '[', ']', '{', '}'];
-	const SymbolLetter = { '(': ')' };
-	const Stack = [];
-	const Gift = [];
-	const ArrGifts = letter.trim().split('');
-	ArrGifts.forEach((letter) => {
-		if (letter === SymbolLetter[Stack[Stack.length - 1]]) {
-			Stack.pop(letter);
-		} else if (Symbols.includes(letter)) {
-			Stack.push(letter);
-		} else if (Stack.includes('(')) Gift.push(letter);
-	});
-	return !Stack.length && Gift.length > 0;
+const isValid = letter => {
+  const Symbols = ['(', ')', '[', ']', '{', '}'];
+  const SymbolLetter = { '(': ')' };
+  const Stack = [];
+  const Gift = [];
+  const ArrGifts = letter.trim().split('');
+  ArrGifts.forEach(letter => {
+    if (letter === SymbolLetter[Stack[Stack.length - 1]]) {
+      Stack.pop(letter);
+    } else if (Symbols.includes(letter)) {
+      Stack.push(letter);
+    } else if (Stack.includes('(')) Gift.push(letter);
+  });
+  return !Stack.length && Gift.length > 0;
 };
 
 //export default isValid;

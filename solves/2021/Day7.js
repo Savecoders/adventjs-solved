@@ -29,45 +29,45 @@ contains(almacen, 'camiseta') // true
 */
 
 const contains = (store, product) => {
-	const arrDrawer = JSON.stringify(store);
-	const searhProduct = arrDrawer.includes(`:"${product}"`);
-	return searhProduct;
+  const arrDrawer = JSON.stringify(store);
+  const searhProduct = arrDrawer.includes(`:"${product}"`);
+  return searhProduct;
 };
 //OTHER SOLVE
 const otherContains = (store, product) =>
-	Object.values(product).some((drawerValue) => {
-		if (Object.prototype.toString.call(drawerValue) === '[object Object]') {
-			return otherContains(drawerValue, product);
-		}
-		return drawerValue === product;
-	});
+  Object.values(product).some(drawerValue => {
+    if (Object.prototype.toString.call(drawerValue) === '[object Object]') {
+      return otherContains(drawerValue, product);
+    }
+    return drawerValue === product;
+  });
 
 const almacen = {
-	estanteria1: {
-		cajon1: {
-			producto1: 'coca-cola',
-			producto2: 'fanta',
-			producto3: 'sprite',
-		},
-	},
-	estanteria2: {
-		cajon1: 'vacio',
-		cajon2: {
-			producto1: 'pantalones',
-			producto2: 'camiseta', // <- ¡Está aquí!
-			producto3: 'camisetaaa', // <- ¡Está aquí!
-		},
-	},
+  estanteria1: {
+    cajon1: {
+      producto1: 'coca-cola',
+      producto2: 'fanta',
+      producto3: 'sprite',
+    },
+  },
+  estanteria2: {
+    cajon1: 'vacio',
+    cajon2: {
+      producto1: 'pantalones',
+      producto2: 'camiseta', // <- ¡Está aquí!
+      producto3: 'camisetaaa', // <- ¡Está aquí!
+    },
+  },
 };
 
 const otroAlmacen = {
-	baul: {
-		fondo: {
-			objeto: 'cd-rom',
-			'otro-objeto': 'disquette',
-			'otra-cosa': 'mando',
-		},
-	},
+  baul: {
+    fondo: {
+      objeto: 'cd-rom',
+      'otro-objeto': 'disquette',
+      'otra-cosa': 'mando',
+    },
+  },
 };
 const test1 = contains(almacen, 'camiseta'); // true
 console.log(test1);

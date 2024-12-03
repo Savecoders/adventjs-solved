@@ -1,10 +1,9 @@
 const checkIsSameTree = (treeA, treeB) =>
-	treeA === treeB
-		? true
-		: treeA.value !== treeB.value
-		? false
-		: checkIsSameTree(treeA.left, treeB.left) &&
-		  checkIsSameTree(treeA.right, treeB.right);
+  treeA === treeB
+    ? true
+    : treeA.value !== treeB.value
+    ? false
+    : checkIsSameTree(treeA.left, treeB.left) && checkIsSameTree(treeA.right, treeB.right);
 
 /* function flatten(arr1) {
 	return arr1.reduce(
@@ -26,14 +25,14 @@ const checkIsSameTree = (treeA, treeB) => {
 	return equealTrees;
 }; */
 const tree = {
-	value: 1,
-	left: { value: 2, left: null, right: null },
-	right: { value: 3, left: null, right: null },
+  value: 1,
+  left: { value: 2, left: null, right: null },
+  right: { value: 3, left: null, right: null },
 };
 const tree2 = {
-	value: 1,
-	left: { value: 3, left: { value: 2, left: null, right: null }, right: null },
-	right: { value: 5, left: null, right: { value: 4, left: null, right: null } },
+  value: 1,
+  left: { value: 3, left: { value: 2, left: null, right: null }, right: null },
+  right: { value: 5, left: null, right: { value: 4, left: null, right: null } },
 };
 console.log(checkIsSameTree(tree, tree));
 console.log(checkIsSameTree(tree2, tree2));

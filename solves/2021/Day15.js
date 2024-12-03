@@ -28,12 +28,11 @@
 	return stack.length === 0;
 }; */
 
-const checkSledJump = (heights) =>
-	heights.reduce(
-		(acc, item, i) =>
-			heights[i - 1] < item || heights[i - 1] === item ? acc + 1 : acc - 1,
-		0
-	) < 0;
+const checkSledJump = heights =>
+  heights.reduce(
+    (acc, item, i) => (heights[i - 1] < item || heights[i - 1] === item ? acc + 1 : acc - 1),
+    0,
+  ) < 0;
 
 console.log(checkSledJump([1, 2, 3, 2, 1]));
 console.log(checkSledJump([0, 1, 0]));

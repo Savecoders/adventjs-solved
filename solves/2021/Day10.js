@@ -24,16 +24,16 @@
 
 */
 
-const getCoins = (change) => {
-	const coins = [50, 20, 10, 5, 2, 1]
-		.map((coin) => {
-			if (coin > change || change === 0) return 0;
-			const penny = Math.floor(change / coin);
-			change = change - coin * penny;
-			return penny;
-		})
-		.reverse();
-	return coins;
+const getCoins = change => {
+  const coins = [50, 20, 10, 5, 2, 1]
+    .map(coin => {
+      if (coin > change || change === 0) return 0;
+      const penny = Math.floor(change / coin);
+      change = change - coin * penny;
+      return penny;
+    })
+    .reverse();
+  return coins;
 };
 
 console.log(getCoins(51));

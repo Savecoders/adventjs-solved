@@ -31,12 +31,12 @@
 }; */
 //optimiazando, para no usar el destructuring uso el .apply(null, prices.slice(index + 1))
 
-const maxProfit = (prices) => {
-	const profit = (acc, price, index) => {
-		const priceSlice = Math.max.apply(null, prices.slice(index + 1)) - price;
-		return acc > priceSlice ? acc : priceSlice;
-	};
-	return prices.reduce(profit, 0) || -1;
+const maxProfit = prices => {
+  const profit = (acc, price, index) => {
+    const priceSlice = Math.max.apply(null, prices.slice(index + 1)) - price;
+    return acc > priceSlice ? acc : priceSlice;
+  };
+  return prices.reduce(profit, 0) || -1;
 };
 
 const pricesBtc = [39, 18, 29, 25, 34, 32, 5];

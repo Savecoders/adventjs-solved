@@ -1,24 +1,22 @@
-const missingForReindeer = (ids) => {
-	for (let index = 0; index <= ids.length; index++) {
-		if (!ids.includes(index)) return index;
-	}
+const missingForReindeer = ids => {
+  for (let index = 0; index <= ids.length; index++) {
+    if (!ids.includes(index)) return index;
+  }
 };
-const missingReindeer = (ids) => {
-	const idSort = ids.sort((a, b) => a - b);
-	const missingNumber = idSort.reduce(
-		(acc, id, i) => {
-			return id + 1 < idSort[i + 1] ? id + 1 : acc;
-		},
-		idSort.length === 1 && idSort.at(idSort.length - 1) > 0
-			? 0
-			: idSort.at(idSort.length - 1) + 1
-	);
+const missingReindeer = ids => {
+  const idSort = ids.sort((a, b) => a - b);
+  const missingNumber = idSort.reduce(
+    (acc, id, i) => {
+      return id + 1 < idSort[i + 1] ? id + 1 : acc;
+    },
+    idSort.length === 1 && idSort.at(idSort.length - 1) > 0 ? 0 : idSort.at(idSort.length - 1) + 1,
+  );
 
-	return missingNumber;
+  return missingNumber;
 };
 
-const missingReindeer2 = (ids) =>
-	(ids.length * (ids.length + 1)) / 2 - ids.reduce((sum, item) => sum + item);
+const missingReindeer2 = ids =>
+  (ids.length * (ids.length + 1)) / 2 - ids.reduce((sum, item) => sum + item);
 
 console.log(missingReindeer([0, 2, 3]));
 console.log(missingReindeer([0]));

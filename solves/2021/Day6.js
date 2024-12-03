@@ -26,11 +26,11 @@
 */
 console.time('loop');
 const sumPairs = (numbers, result) => {
-	for (let index = 0; index <= numbers.length - 1; index++) {
-		if (numbers.find((num, i) => num === result - numbers[index] && index != i))
-			return [numbers[index], result - numbers[index]];
-	}
-	return null;
+  for (let index = 0; index <= numbers.length - 1; index++) {
+    if (numbers.find((num, i) => num === result - numbers[index] && index != i))
+      return [numbers[index], result - numbers[index]];
+  }
+  return null;
 };
 console.log(sumPairs([3, 5, 7, 2], 10)); // [3, 7]
 console.log(sumPairs([-3, -2, 7, -5], 10)); // null
