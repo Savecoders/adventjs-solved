@@ -1,4 +1,4 @@
-function createXmasTree(height, ornament) {
+function createXmasTree(height: number, ornament: string): string {
   const trunck =
     '_'.repeat(height - 1) +
     '#' +
@@ -18,8 +18,6 @@ function createXmasTree(height, ornament) {
   }
   return `${tree}${trunck}`;
 }
-const tree = createXmasTree(5, '*');
-console.log(tree);
 /*
 ____*____
 ___***___
