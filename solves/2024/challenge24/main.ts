@@ -1,8 +1,3 @@
-/**
- * @param {object} tree1 - The first binary tree.
- * @param {object} tree2 - The second binary tree.
- * @returns {[boolean, string]}
- */
 function isTreesSynchronized(
   tree1: { value: string; left?: any; right?: any } | undefined,
   tree2: { value: string; left?: any; right?: any } | undefined,
@@ -29,13 +24,13 @@ const tree1 = {
   right: { value: '🎅' },
 };
 
-const tree2 = {
+const tree23 = {
   value: '🎄',
   left: { value: '🎅' },
   right: { value: '⭐' },
 };
 
-console.log(isTreesSynchronized(tree1, tree2));
+console.log(isTreesSynchronized(tree1, tree23));
 
 /*
   tree1          tree2
