@@ -1,4 +1,4 @@
-![Advent JS 2025](../../.github/assets/2025.png)
+![Advent JS 2025](.github/assets/2025.png)
 
 Actualemente AdventJS tiene 5 versiones, 2021 - 2022 - 2023 - 2024 - 2025
 Cada una de ellas consta de 24-25 ejercicios, entre las siguientes categorias:
